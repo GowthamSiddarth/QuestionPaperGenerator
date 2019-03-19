@@ -1,7 +1,9 @@
+import itertools
+import sys
+
 from helper.dataparser import DataParser
 from helper.dataprocessor import DataProcessor
 from util.questionsfilter import QuestionsFilter
-import itertools, sys
 
 if __name__ == '__main__':
     if 2 != len(sys.argv):
