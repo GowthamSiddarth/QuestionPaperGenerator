@@ -14,3 +14,8 @@ class DataProcessor:
         self.num_of_questions = int(content[0])
         self.questions = [QuestionPaper(cols[0][1], cols[1], cols[2]) for line in content[1:-1] for cols in
                           line.split(', ')]
+        last_line_cols = content[-1].split(', ')
+        self.total_marks = int(last_line_cols[0])
+        for idx in range(1, len(last_line_cols)):
+            cols = last_line_cols[idx].split(' ')
+            self.marks_distribution[DifficultyLevel[cols[0]]] = int(cols[1])
