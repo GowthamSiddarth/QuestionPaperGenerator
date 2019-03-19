@@ -9,4 +9,4 @@ Q7, medium, 3
 Q8, easy, 3
 Q9, medium, 5
 Q10, hard, 5
-20, easy 25, medium, 50, hard 25
+20, easy 25, medium 50, hard 25
