@@ -15,3 +15,6 @@ class Question:
 
     def get_marks(self):
         return self._marks
+
+    def __repr__(self):
+        return "{" + str(self.get_question_number()) + ", " + self.get_difficulty().name + ", " + str(self.get_marks()) + "}"
