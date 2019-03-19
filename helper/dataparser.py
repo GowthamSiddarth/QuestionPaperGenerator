@@ -23,7 +23,7 @@ class DataParser:
     @staticmethod
     def _map_meta_data_to_question_paper(meta_data):
         cols = meta_data.split(', ')
-        return Question(cols[0][1], cols[1], cols[2])
+        return Question(int(cols[0][1:]), cols[1], int(cols[2]))
 
     @staticmethod
     def _read_input(self):
