@@ -1,10 +1,14 @@
 from helper.dataparser import DataParser
 from helper.dataprocessor import DataProcessor
 from util.questionsfilter import QuestionsFilter
-import itertools
+import itertools, sys
 
 if __name__ == '__main__':
-    data_set_path = 'data/sample-input.txt'
+    if 2 != len(sys.argv):
+        print("data set path argument not found")
+        sys.exit(0)
+
+    data_set_path = sys.argv[1]
     data_parser = DataParser(data_set_path=data_set_path)
     questions_group = data_parser.get_questions()
 
