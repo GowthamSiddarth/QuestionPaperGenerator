@@ -1,11 +1,11 @@
-from models.questionpaper import QuestionPaper
+from models.question import Question
 from models.difficulty import DifficultyLevel
 
 
-class DataProcessor:
+class DataParser:
     def __init__(self, data_set_path):
         self._data_set_path = data_set_path
-        self._num_of_questions, self._questions, self._total_marks, self._marks_distribution = DataProcessor._read_input(
+        self._num_of_questions, self._questions, self._total_marks, self._marks_distribution = DataParser._read_input(
             self)
 
     def get_num_of_questions(self):
@@ -23,7 +23,7 @@ class DataProcessor:
     @staticmethod
     def _map_meta_data_to_question_paper(meta_data):
         cols = meta_data.split(', ')
-        return QuestionPaper(cols[0][1], cols[1], cols[2])
+        return Question(cols[0][1], cols[1], cols[2])
 
     @staticmethod
     def _read_input(self):

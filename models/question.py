@@ -1,7 +1,7 @@
 from models.difficulty import DifficultyLevel
 
 
-class QuestionPaper:
+class Question:
     def __init__(self, question_number, difficulty, marks):
         self._question_number = question_number
         self._difficulty = DifficultyLevel[difficulty]
