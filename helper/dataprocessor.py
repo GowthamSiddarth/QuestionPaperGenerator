@@ -5,7 +5,19 @@ from models.difficulty import DifficultyLevel
 class DataProcessor:
     def __init__(self, data_set_path):
         self._data_set_path = data_set_path
-        self._num_of_questions, self._questions, self._total_marks, self.marks_distribution = DataProcessor.read_input()
+        self._num_of_questions, self._questions, self._total_marks, self._marks_distribution = DataProcessor.read_input()
+
+    def get_num_of_question(self):
+        return self._num_of_questions
+
+    def get_questions(self):
+        return self._questions
+
+    def get_total_marks(self):
+        return self._total_marks
+
+    def get_marks_distribution(self):
+        return self._marks_distribution
 
     @staticmethod
     def _map_meta_data_to_question_paper(meta_data):
