@@ -1,4 +1,4 @@
-from models.Difficulty import DifficultyLevel
+from models.difficulty import DifficultyLevel
 
 
 class QuestionPaper:
