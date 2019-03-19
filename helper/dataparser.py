@@ -38,6 +38,6 @@ class DataParser:
         marks_distribution = {}
         for idx in range(1, len(last_line_cols)):
             cols = last_line_cols[idx].split(' ')
-            marks_distribution[DifficultyLevel[cols[0]]] = int(cols[1])
+            marks_distribution[DifficultyLevel[cols[0]]] = (int(cols[1]) * total_marks) / 100
 
         return num_of_questions, questions, total_marks, marks_distribution
