@@ -8,9 +8,9 @@ class QuestionsFilter:
                 start = start + 1
 
             if curr_sum == target_marks:
-                return questions_list[start:idx - 1]
+                return questions_list[start:idx]
 
             if idx < len(questions_list):
                 curr_sum = curr_sum + questions_list[idx].get_marks()
 
-        return None
+        return []
