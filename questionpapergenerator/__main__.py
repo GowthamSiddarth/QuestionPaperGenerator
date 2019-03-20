@@ -1,16 +1,12 @@
 import itertools
 import sys
 
-from helper.dataparser import DataParser
-from helper.dataprocessor import DataProcessor
-from util.questionsfilter import QuestionsFilter
+from questionpapergenerator.helper.dataprocessor import DataProcessor
+from questionpapergenerator.helper.dataparser import DataParser
+from questionpapergenerator.util.questionsfilter import QuestionsFilter
 
-if __name__ == '__main__':
-    if 2 != len(sys.argv):
-        print("data set path argument not found")
-        sys.exit(0)
 
-    data_set_path = sys.argv[1]
+def generate_question_paper(data_set_path):
     data_parser = DataParser(data_set_path=data_set_path)
     questions_group = data_parser.get_questions()
 
@@ -24,3 +20,11 @@ if __name__ == '__main__':
 
     for question in question_paper:
         print(question)
+
+
+if __name__ == '__main__':
+    if 2 != len(sys.argv):
+        print("data set path argument not found")
+        sys.exit(0)
+
+    generate_question_paper(data_set_path=sys.argv[1])
